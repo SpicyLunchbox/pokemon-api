@@ -21,7 +21,7 @@ function App() {
         .then(res => {
           pokemonData.push(res.data);
           if (num === 151) {
-            pokemonData.sort(function(a,b){
+            pokemonData.sort((a,b) => {
               return a.id - b.id;
             })
             setLoading(false);
