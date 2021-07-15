@@ -4,7 +4,8 @@ import React, {useState, useEffect} from 'react';
 import PokemonCard from './PokemonCard';
 
 function App() {
-  const [pokemonData, setPokemonData] = useState([])
+  const [isLoading, setLoading] = useState(true);
+  const [pokemonData] = useState([]);
 
   function generateRange() {
     let range = [];
@@ -16,32 +17,39 @@ function App() {
 
   useEffect(() => {
     generateRange().forEach(num => {
-      console.log(num)
       axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
         .then(res => {
-          pokemonData.push(res.data)
-          
+          pokemonData.push(res.data);
+          if (num === 151) {
+            setLoading(false);
+          }
         })
         .catch(err => {
-          console.log(err)
+          console.log(err);
         })
     }) 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  if (isLoading) {
+    return <div className="App">Loading...</div>
+  } else {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Pokemon API</h1>
         <h2>Gotta catch em all</h2>
       </header>
+      <section className="PokeCard-container">
       {pokemonData.map(pokemon => {
         return <PokemonCard pokemon={pokemon}/>
       })}
+      </section>
       <footer className="App-footer">
 
       </footer>
     </div>
-  );
+  )};
 }
 
 export default App;
