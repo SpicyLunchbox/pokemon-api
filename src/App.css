@@ -1,22 +1,22 @@
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #16384c;
 }
 
 .App-header {
-  min-height: 10vh;
+  height: 10rem;
 }
 
 .App-footer {
-  min-height: 10vh;
+  height: 10rem;
   
 }
 
 .PokeCard-container { /*container*/
-  position: relative;
-  width: 1100px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,6 @@
 }
 
 .PokeCard-container .PokeCard { /*card*/
-  position: relative;
   max-width: 300px;
   height: 215px;
   background: #fff;
@@ -38,7 +37,7 @@
 }
 
 .PokeCard-container .PokeCard:hover{
-  height: 420px;
+  height: 500px;
 }
 
 .PokeCard-container .PokeCard .ImgBx { /*imgBx*/
@@ -46,9 +45,8 @@
   width: 260px;
   height: 260px;
   top: -60px;
-  left: 20px;
   z-index: 1;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  /* box-shadow: 0 5px 20px rgba(0,0,0,0.2); */
 }
 
 .PokeCard-container .PokeCard .ImgBx img{
@@ -73,4 +71,11 @@
   opacity: 1;
   margin-top: -40px;
   transition-delay: 0.3s;
+}
+
+h3, h5, p{
+  display: block;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }

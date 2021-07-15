@@ -46,7 +46,7 @@ function App() {
       })}
       </section>
       <footer className="App-footer">
-
+        <p>this is the footer</p>
       </footer>
     </div>
   )};

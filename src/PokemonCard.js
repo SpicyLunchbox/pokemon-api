@@ -10,10 +10,12 @@ export default function PokemonCard({pokemon}) {
             </div>
             <div className="CardContent">
                 <h3>{pokemon.name}</h3>
+                <br/>
                 <h5>Types</h5>
                 {pokemon.types.map(type => {
                     return <p>{type.type.name}</p>
                 })}
+                <br/>
                 <h5>Stats</h5>
                 {pokemon.stats.map(stat => {
                     return <p>{stat.stat.name}: {stat.base_stat}</p>
