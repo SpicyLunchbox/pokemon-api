@@ -21,6 +21,9 @@ function App() {
         .then(res => {
           pokemonData.push(res.data);
           if (num === 151) {
+            pokemonData.sort(function(a,b){
+              return a.id - b.id;
+            })
             setLoading(false);
           }
         })
@@ -38,15 +41,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Pokemon API</h1>
-        <h2>Gotta catch em all</h2>
+        <h2>Gotta catch em all!</h2>
       </header>
       <section className="PokeCard-container">
       {pokemonData.map(pokemon => {
         return <PokemonCard pokemon={pokemon}/>
       })}
       </section>
-      <footer className="App-footer">
-        <p>this is the footer</p>
+      <footer className="App-footer"> 
       </footer>
     </div>
   )};
