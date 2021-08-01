@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default function PokemonCard({pokemon}) {
-    let imgSrc = `https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`
+    // let imgSrc = `https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png` website is currently down
+    let imgSrc = pokemon.sprites.front_default
 
     return (
         <div className="PokeCard">

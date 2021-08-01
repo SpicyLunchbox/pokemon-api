@@ -37,23 +37,27 @@
 }
 
 .PokeCard-container .PokeCard:hover{
-  height: 500px;
+  height: 400px; /*500px*/
 }
 
 .PokeCard-container .PokeCard .ImgBx { /*imgBx*/
   position: relative;
   width: 260px;
   height: 260px;
-  top: -60px;
+  top: -120px; /*originally was -60px*/
   z-index: 1;
   /* box-shadow: 0 5px 20px rgba(0,0,0,0.2); */
 }
 
-.PokeCard-container .PokeCard .ImgBx img{
+/* .PokeCard-container .PokeCard .ImgBx img{
   max-width: 100%;
   border-radius: 4px;
-}
+} */
 
+.PokeCard-container .PokeCard .ImgBx img{
+  width: 100%;
+  border-radius: 4px;
+}
 
 .PokeCard-container .PokeCard .CardContent{ /*content*/
   position: relative;
@@ -69,7 +73,7 @@
 .PokeCard-container .PokeCard:hover .CardContent{
   visibility: visible;
   opacity: 1;
-  margin-top: -40px;
+  /*margin-top: -40px;*/
   transition-delay: 0.3s;
 }
 
